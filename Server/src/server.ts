@@ -4,10 +4,8 @@ import investmentRoutes from './routes/investmentRoutes';
 
 const app: Application = express();
 
-// Middleware
 app.use(bodyParser.json());
 
-// Routes
 app.use('/api/investments', investmentRoutes);
 
 const PORT = process.env.PORT || 3000;
