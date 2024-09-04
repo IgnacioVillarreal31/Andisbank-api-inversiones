@@ -23,3 +23,7 @@ export const getInvestmentsByUser = (req: Request, res: Response): void => {
     const userInvestments = investments.filter(inv => inv.userId === parseInt(userId));
     res.json(userInvestments);
 };
+
+export const dos = (req: Request, res: Response): void => {
+    res.json("hola");
+};
