@@ -1,7 +1,7 @@
 export interface IUserInvestment
 {
     username: string,
-    idInvestment: number,
+    idInvestment: string,
     amount: number,
     isBuy: boolean
 }

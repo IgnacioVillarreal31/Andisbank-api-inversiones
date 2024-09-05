@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "defb0aa6-a2ce-4b6a-a81e-337ae6600797",
+		"name": "Andisbank-prestamos-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26000848"
+	},
+	"item": [
+		{
+			"name": "getInvestments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/investments/getInvestments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"getInvestments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInvestment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/investments/getInvestment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"getInvestment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postInvestmentAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idInvestment\": 5,\r\n    \"shares\": 10000,\r\n    \"priceByShare\": 20,\r\n    \"name\": \"CRD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/investments/postInvestmentAdmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"postInvestmentAdmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postBuyInvestmentUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"username1\",\r\n    \"idInvestment\": 5,\r\n    \"amount\": 4000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/investments/postBuyInvestmentUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"postBuyInvestmentUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postSellInvestmentUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"username1\",\r\n    \"idInvestment\": 5,\r\n    \"amount\": 4000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/investments/postSellInvestmentUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"postSellInvestmentUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putInvestmentAdmin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idInvestment\": \"1\",\r\n    \"shares\": 20000,\r\n    \"priceByShare\": 18,\r\n    \"name\": \"CRD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/investments/putInvestmentAdmin/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"putInvestmentAdmin",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteInvestmentAdmin",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/investments/deleteInvestmentAdmin/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"deleteInvestmentAdmin",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserInvestment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/investments/getUserInvestment/username1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"investments",
+						"getUserInvestment",
+						"username1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "as"
+		}
+	]
+}

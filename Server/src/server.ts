@@ -6,7 +6,7 @@ const app: Application = express();
 
 app.use(bodyParser.json());
 
-app.use('/api/investments', investmentRoutes);
+app.use('/investments', investmentRoutes);
 
 const PORT = process.env.PORT || 3000;
 

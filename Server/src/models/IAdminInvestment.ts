@@ -1,6 +1,6 @@
 export interface IAdminInvestment
 {
-    idInvestment: number,
+    idInvestment: string,
     shares: number,
     priceByShare: number,
     name: string
