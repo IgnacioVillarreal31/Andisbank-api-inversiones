@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+message Investment {
+    string idInvestment = 1;
+    int32  shares = 2;
+    int32  priceByShare = 3;
+    string name = 4;
+}
+
+message Empty {}
+
+message InvestmentById {
+    string idInvestment = 1;
+}
+
+message InvestmentsList {
+   repeated Investment investments = 1;
+}
+
+message UserInvestment {
+    string  username = 1;
+    string idInvestment = 2;
+    int32  amount = 3;
+    bool isBuy = 4;
+}
+
+message UserInvestmentsList {
+   repeated UserInvestment userInvestments = 1;
+}
+
+message UserInvestmentByUsername {
+    string username = 1;
+}
+
+message IsCorrect {
+    bool isCorrect = 1;
+}
+
+service InvestmentService {
+    rpc GetInvestments (Empty) returns (InvestmentsList) {}
+    rpc GetInvestment (InvestmentById) returns (Investment){}
+    rpc PostInvestment (Investment) returns (IsCorrect){}
+    rpc PostBuyInvestment (UserInvestment) returns (IsCorrect){}
+    rpc PostSellInvestment (UserInvestment) returns (IsCorrect){}
+    rpc DeleteInvestment (InvestmentById) returns (IsCorrect){}
+    rpc PutInvestment (Investment) returns (IsCorrect){}
+    rpc GetUserInvestment (UserInvestmentByUsername) returns (UserInvestmentsList){}
+}
