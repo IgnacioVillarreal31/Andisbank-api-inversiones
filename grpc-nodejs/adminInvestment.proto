@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message AdminInvestment {
+    string idInvestment = 1;
+    int32  shares = 2;
+    int32  priceByShare = 3;
+    string name = 4;
+}
+
+message Empty {}
+
+message InvestmentById {
+    string idInvestment = 1;
+}
+
+message AdminInvestmentsList {
+   repeated AdminInvestment adminInvestment = 1;
+}
+
+service AdminInvestmentService {
+    rpc GetAdminInvestments (Empty) returns (AdminInvestmentsList) {}
+    rpc GetAdminInvestment (InvestmentById) returns (AdminInvestment){}
+    rpc PostAdminInvestment (AdminInvestment) returns (Empty){}
+}
+
+
+
+
+
