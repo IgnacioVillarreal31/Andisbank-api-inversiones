@@ -1,6 +1,6 @@
 const grpc = require("@grpc/grpc-js");
 var protoLoader = require("@grpc/proto-loader");
-const PROTO_PATH = "./adminInvestment.proto";
+const PROTO_PATH = "./investment.proto";
 
 const options = {
     keepCase: true,
@@ -11,30 +11,74 @@ const options = {
 };
 
 var packageDefinition = protoLoader.loadSync(PROTO_PATH, options);
-const adminInvestmentService = grpc.loadPackageDefinition(packageDefinition).AdminInvestmentService;
+const investmentService = grpc.loadPackageDefinition(packageDefinition).InvestmentService;
 
-const client = new adminInvestmentService(
+const client = new investmentService(
     "localhost:50051",
     grpc.credentials.createInsecure()
 );
 
-client.GetAdminInvestments({}, (error, investments) => {
+/*
+client.GetInvestments({}, (error, investments) => {
     if (error) {
         throw error;
     }
-    console.log(investments.adminInvestment);
+    console.log(investments);
 });
-
-client.GetAdminInvestment({ idInvestment: "1" }, (error, investment) => {
+*/
+/*
+client.GetInvestment({ idInvestment: "1" }, (error, investment) => {
     if (error) {
         throw error;
     }
     console.log(investment);
 });
-
-client.PostAdminInvestment({ idInvestment: "5", shares: 300, priceByShare: 100, name: "Algo R." }, (error, isCorrect) => {
+*/
+/*
+client.PostInvestment({ idInvestment: "5", shares: 300, priceByShare: 100, name: "Algo R." }, (error, isCorrect) => {
     if (error) {
         throw error;
     }
     console.log(isCorrect);
 });
+*/
+/*
+client.PostBuyInvestment({ username: "Pablo Chacon", idInvestment: "1", amount: 10 }, (error, isCorrect) => {
+    if (error) {
+        throw error;
+    }
+    console.log(isCorrect);
+});
+*/
+/*
+client.PostSellInvestment({ username: "Pablo Chacon", idInvestment: "1", amount: 10 }, (error, isCorrect) => {
+    if (error) {
+        throw error;
+    }
+    console.log(isCorrect);
+});
+*/
+/*
+client.DeleteInvestment({ idInvestment: "1" }, (error, isCorrect) => {
+    if (error) {
+        throw error;
+    }
+    console.log(isCorrect);
+});
+*/
+/*
+client.PutInvestment({ idInvestment: "1", shares: 50, priceByShare: 50, name: "Algo R." }, (error, isCorrect) => {
+    if (error) {
+        throw error;
+    }
+    console.log(isCorrect);
+});
+*/
+/*
+client.GetUserInvestment({ username: "Pablo Chacon" }, (error, userInvestments) => {
+    if (error) {
+        throw error;
+    }
+    console.log(userInvestments);
+});
+*/
